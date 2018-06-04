@@ -7,7 +7,7 @@ import java.lang.Long;
 
 class JavaCode {
 
-	public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN = "\u001B[32m";
@@ -38,8 +38,7 @@ class JavaCode {
     		Boolean isHidden = fileEntry.getName().charAt(0) == '.';
 	        if (fileEntry.isDirectory()) {
 	        	String directoryDescription = "";
-	        	directoryDescription += isHidden ?  ANSI_WHITE : ANSI_YELLOW;
-	            // getFilesForFolderDescription(fileEntry);
+	        	directoryDescription += isHidden ?  ANSI_WHITE : ANSI_YELLOW;	            
 	            directoryDescription += fileEntry.getName() + " - []";
 	            directoryDescription += isHidden ? ANSI_WHITE : ANSI_YELLOW;
 	            if (isHidden) {
@@ -53,9 +52,7 @@ class JavaCode {
 	            fileDescription += fileEntry.getName() + " - " ;
 	            fileDescription += " [ " + getRoundedValue(fileEntry.length()) + " ]" ;
 	            fileDescription += isHidden ? ANSI_WHITE : ANSI_BLUE;
-	            // will be deleted
-	            // System.out.println(fileEntry.length() + " - length REAL" );
-	            
+	            	            
 	            if (isHidden) {
 	            	hiddenFilesDescriptions.add(fileDescription);
 	            } else {
@@ -63,15 +60,11 @@ class JavaCode {
 	            }
 	        }
 	    }
-	    // for (String directoryDescription : hiddenDirectoryDescriptions) {
-	    // 	System.out.println(directoryDescription);
-	    // }
+	    
 	    for (String directoryDescription : directoryDescriptions) {
 	    	System.out.println(directoryDescription);
 	    }
-	    // for (String fileDescription : hiddenFilesDescriptions) {
-	    // 	System.out.println(fileDescription);
-	    // }
+	    
 	    for (String fileDescription : filesDescriptions) {
 	    	System.out.println(fileDescription);
 	    }
@@ -92,4 +85,5 @@ class JavaCode {
     }
 }
 
+// terminal invocation
 // java -cp "/home/vsavitsky/IdeaProjects/JavaCode/JavaCode" JavaCode $1 $2 $3
